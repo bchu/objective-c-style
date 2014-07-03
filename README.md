@@ -6,6 +6,7 @@ Brian's Objective-C style guide is a fork of raywenderlich.com's Objective-C sty
 Additional guidelines:
 
 1. Use @import (modules): http://stackoverflow.com/questions/18947516/import-vs-import-ios-7 (but leave existing #imports alone)
+2. If there are multiple init methods, the designated initializer (typically the one with the most parameters) should be declared first, and a comment should note that it is the designated initializer.
 
 # Skim Apple's coding guidelines
 
