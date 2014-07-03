@@ -1,3 +1,22 @@
+# Brian's Objective-C style guide
+
+Brian's Objective-C style guide is a fork of raywenderlich.com's Objective-C style guide. Places where Brian's style differs from raywenderlich.com is indicated by strikethroughs for the raywenderlich style and brackets for Brian's style. E.g.: ~~raywenderlich style~~ [Brian's style].
+
+## Additions:
+Additional guidelines:
+
+1. Use @import (modules): http://stackoverflow.com/questions/18947516/import-vs-import-ios-7 (but leave existing #imports alone)
+
+# Skim Apple's coding guidelines
+
+Make sure to skim [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html) for a guide on method/property naming conventions. While those guidelines won't be strictly followed (too many details to follow), of particular interest are the guidelines on:
+
+1. Method naming
+2. Protocol naming (`-ing`)
+3. Use of `and` in method named parameters (use it for additional actions, not for additional data)
+4. Delegation method naming (follow the table view protocol methods)
+5. Notification method naming (use of `did`, `should`, `will`, etc...)
+
 # The official raywenderlich.com Objective-C style guide.
 
 This style guide outlines the coding conventions for raywenderlich.com.
@@ -115,8 +134,9 @@ Use `#pragma mark -` to categorize methods in functional groupings and protocol/
 
 ## Spacing
 
-* Indent using 2 spaces (this conserves space in print and makes line wrapping less likely). Never indent with tabs. Be sure to set this preference in Xcode.
-* Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
+* ~~Indent using 2 spaces~~ [Indent using 4 spaces] (this conserves space in print and makes line wrapping less likely). Never indent with tabs. Be sure to set this preference in Xcode.
+* ~~Method~~ [Non-method] braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
+* [Method braces follow Apple's default, which is having braces on a separate line]
 
 **Preferred:**
 ```objc
@@ -559,6 +579,12 @@ result = isHorizontal ? x : y;
 **Not Preferred:**
 ```objc
 result = a > b ? x = c > d ? c : d : y;
+```
+
+**Also permissible:**
+Short-form nil checking:
+```objc
+Blah *b = thingThatCouldBeNil ?: defaultValue;
 ```
 
 ## Init Methods
