@@ -5,7 +5,8 @@ Brian's Objective-C style guide is a fork of raywenderlich.com's Objective-C sty
 ## Additions:
 Additional guidelines:
 
-1. Use @import (modules): http://stackoverflow.com/questions/18947516/import-vs-import-ios-7 (but leave existing #imports alone)
+1. Use @import (modules): http://stackoverflow.com/questions/18947516/import-vs-import-ios-7 (replace #imports of *Apple* frameworks with @imports. Note that @import does not work with user classes or 3rd party libraries). Get rid of Apple #imports inside the the .pch (precompiled header) file; only use it for 3rd party libraries that need to be precompiled. Do *not* use the .pch file to implicitly declare imports for source code. Use it for it's intended purpose (declaring imports that should be precompiled).
+    Note that technically #import's are remapped to @imports by the compiler.
 2. If there are multiple init methods, the designated initializer (typically the one with the most parameters) should be declared first, and a comment should note that it is the designated initializer.
 
 # Skim Apple's coding guidelines
