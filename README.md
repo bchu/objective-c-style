@@ -8,7 +8,11 @@ Additional guidelines:
 1. Use @import (modules): http://stackoverflow.com/questions/18947516/import-vs-import-ios-7 (replace #imports of *Apple* frameworks with @imports. Note that @import does not work with user classes or 3rd party libraries). Get rid of Apple #imports inside the the .pch (precompiled header) file; only use it for 3rd party libraries that need to be precompiled. Do *not* use the .pch file to implicitly declare imports for source code. Use it for it's intended purpose (declaring imports that should be precompiled).
     Note that technically #import's are remapped to @imports by the compiler.
 2. If there are multiple init methods, the designated initializer (typically the one with the most parameters) should be declared first, and a comment should note that it is the designated initializer.
-3. Use dot-notation for any accessor-type methods, even if not explicitly accessors.
+3. Use dot-notation for any accessor-type methods, even if not explicitly properties.
+4. Related to #3, use properties for accessor-like methods.
+5. Cell re-use identifiers should be the name of the cell class.
+    If using UITableViewCell, the style will be suffixed after a hyphen.
+    For example: `UITableViewCell-Basic`.
 
 # Skim Apple's coding guidelines
 
