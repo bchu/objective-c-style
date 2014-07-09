@@ -10,9 +10,7 @@ Additional guidelines:
 2. If there are multiple init methods, the designated initializer (typically the one with the most parameters) should be declared first, and a comment should note that it is the designated initializer.
 3. Use dot-notation for any accessor-type methods, even if not explicitly properties.
 4. Related to #3, use properties for accessor-like methods.
-5. Cell re-use identifiers should be the name of the cell class.
-    If using UITableViewCell, the style will be suffixed after a hyphen.
-    For example: `UITableViewCell-Basic`.
+5. Cell reuse identifiers for custom cell classes should be the name of the cell class. For template UITableViewCells, use UITableViewCell-<style> (e.g. UITableViewCell-Basic) For unreusable custom UITableViewCells, use a short camelCase name.
 
 # Skim Apple's coding guidelines
 
