@@ -5,12 +5,14 @@ Brian's Objective-C style guide is a fork of raywenderlich.com's Objective-C sty
 ## Additions:
 Additional guidelines:
 
-1. Use @import (modules): http://stackoverflow.com/questions/18947516/import-vs-import-ios-7 (replace #imports of *Apple* frameworks with @imports. Note that @import does not work with user classes or 3rd party libraries). Get rid of Apple #imports inside the the .pch (precompiled header) file; only use it for 3rd party libraries that need to be precompiled. Do *not* use the .pch file to implicitly declare imports for source code. Use it for it's intended purpose (declaring imports that should be precompiled).
+1. Use @import (modules): http://stackoverflow.com/questions/18947516/import-vs-import-ios-7 (Replace #imports of *Apple* frameworks with @imports. Note that @import does not work with user classes or 3rd party libraries). Get rid of Apple #imports inside the the .pch (precompiled header) file; only use it for 3rd party libraries that need to be precompiled.
+2. Do *not* use the .pch file to implicitly declare imports for source code. Use it for it's intended purpose (declaring imports that should be precompiled).
     Note that technically #import's are remapped to @imports by the compiler.
-2. If there are multiple init methods, the designated initializer (typically the one with the most parameters) should be declared first, and a comment should note that it is the designated initializer.
-3. Use dot-notation for any accessor-type methods, even if not explicitly properties.
-4. Related to #3, use properties for accessor-like methods.
-5. Cell reuse identifiers for custom cell classes should be the name of the cell class. For template UITableViewCells, use UITableViewCell-<style> (e.g. UITableViewCell-Basic) For unreusable custom UITableViewCells, use a short camelCase name.
+3. If there are multiple init methods, the designated initializer (typically the one with the most parameters) should be declared first, and a comment should note that it is the designated initializer.
+4. Use dot-notation for any accessor-type methods, even if not explicitly properties.
+5. Related to #3, use properties for accessor-like methods.
+6. Cell reuse identifiers for custom cell classes should be the name of the cell class. For template UITableViewCells, use UITableViewCell-<style> (e.g. UITableViewCell-Basic) For unreusable custom UITableViewCells, use a short camelCase name.
+7. Use `User-Defined Runtime Attributes` to define UI whenever possible, instead of inside `viewWillLoad`.
 
 # Skim Apple's coding guidelines
 
