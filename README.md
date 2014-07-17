@@ -13,6 +13,7 @@ Additional guidelines:
 5. Related to #3, use properties for accessor-like methods.
 6. Cell reuse identifiers for custom cell classes should be the name of the cell class. For template UITableViewCells, use UITableViewCell-<style> (e.g. UITableViewCell-Basic) For unreusable custom UITableViewCells, use a short camelCase name.
 7. Use `User-Defined Runtime Attributes` to define UI whenever possible, instead of inside `viewWillLoad`.
+8. Set views to opaque whenever possible, for performance reasons.
 
 # Skim Apple's coding guidelines
 
