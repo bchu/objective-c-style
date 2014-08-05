@@ -10,8 +10,9 @@ Additional guidelines:
     Note that technically #import's are remapped to @imports by the compiler.
 3. If there are multiple init methods, the designated initializer (typically the one with the most parameters) should be declared first, and a comment should note that it is the designated initializer.
 4. Use dot-notation for any accessor-type methods, even if not explicitly properties.
-5. Related to #3, use properties for accessor-like methods.
-6. Cell reuse identifiers for custom cell classes should be the name of the cell class. For template UITableViewCells, use UITableViewCell-<style> (e.g. UITableViewCell-Basic) For unreusable custom UITableViewCells, use a short camelCase name.
+5. Related to #3, use properties to declare accessor-like methods.
+6. Cell reuse identifiers for custom cell classes should be the name of the cell class. For template UITableViewCells, use UITableViewCell-\<style\> (e.g. UITableViewCell-Basic) For unreusable custom UITableViewCells, use a short camelCase name.
+    Use `NSStringFromClass([<instance> class>])`
 7. Use `User-Defined Runtime Attributes` to define UI whenever possible, instead of inside `viewWillLoad`.
 8. Set views to opaque whenever possible, for performance reasons.
 9. Make sure `NSNotificationCenter` observes are removed in `dealloc`.
